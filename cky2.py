@@ -107,6 +107,7 @@ def build_wfst(tokens, wfst, grammar, verbose=True):
     #
     # CKY main loop
 #    history = []
+# このhistoryに一番構文木として確率の高いものをぶち込む？と思う
     for span in range(2, num_tokens+1): # j-axis
         for start in range(num_tokens-span+1): # i-axis
             for div in range(1, span): # go for each left-right combination
@@ -165,3 +166,9 @@ def parse(tokens, grammar, verbose=True):
         print('Found', len(trees), 'trees')
         check_same_trees(trees)
     return trees
+
+for t in parse(elephant_t, grammar_cnf, verbose=False): print(t)
+
+print('----------')
+
+for t in parse(elephant_t, grammar_cnf, verbose=True): print(t)
