@@ -167,7 +167,7 @@ def parse(tokens, grammar, verbose=True):
         check_same_trees(trees)
     return trees
 
-for t in parse(elephant_t, grammar_cnf, verbose=False): print(t)
+# for t in parse(elephant_t, grammar_cnf, verbose=False): print(t)
 
 print('----------')
 

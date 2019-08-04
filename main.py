@@ -13,7 +13,8 @@ def pcky_create(tree):
             all_count = 0.0
 
             for train_data_value in train_data[str(lhs)]:
-                all_count += train_data_value.values()[0]['count']
+                z = train_data_value.values()
+                all_count += z[0]['count']
 
                 for a_rhs in rhs:
                     if a_rhs in train_data_value:
